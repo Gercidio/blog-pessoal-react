@@ -1,11 +1,18 @@
-import Home from './pages/home/Home';
-import './App.css';
 
+import './App.css'
+import Footer from './pages/footer/Footer'
+import Home from './pages/home/Home'
+import NavBar from './pages/navBar/NavBar'
 
 function App() {
+
   return (
-   <Home />
-  );
+    <>
+      <NavBar />
+      <Home />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
