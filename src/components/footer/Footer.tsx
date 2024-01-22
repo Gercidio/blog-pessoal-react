@@ -21,7 +21,7 @@ function Footer() {
                         <a href= "https://www.instagram.com/generationbrasil"target="_blank">
                             <FaInstagram size={48} />
                         </a>
-                        <a href="https://www.linkedin.com/in/gercidiovaleriano" target="_blank">
+                        <a href="https://www.linkedin.com/in/gercidiovaleriano"  target="_blank">
                             <FaLinkedin size={48} />
                             </a>
 
