@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/Footer.tsx'
 import Navbar from './components/navBar/NavBar.tsx'
+import React, {useState,useEffect } from 'react'
 import Home from './pages/home/Home.tsx'
 import Login from './pages/login/Login.tsx'
 
