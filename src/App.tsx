@@ -3,10 +3,30 @@ import './App.css'
 import Footer from './components/footer/Footer.tsx'
 import Navbar from './components/navBar/NavBar.tsx'
 import React, {useState,useEffect } from 'react'
+import axios from 'axios'
 import Home from './pages/home/Home.tsx'
 import Login from './pages/login/Login.tsx'
 
+
+interface User{
+  id: number;
+  name: string;
+
+}
+
 function App() {
+const [users, setUsers] = useState<User[]>([])
+
+useEffect(() => {
+axios.get<User[]>('https://db-blogpesoal-apki.onrender.com/swagger-ui/index.html#/').then(response => {
+  setUsers(response.data)
+}
+).catch(error => {
+  console.log(error)
+}
+)
+
+}, [])
 
   return (
     <>
