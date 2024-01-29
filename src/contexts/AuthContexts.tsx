@@ -29,17 +29,15 @@ export function AuthProvider({ children }: AuthProvidersProps) {
     const [isLoading, setIsLoading] = useState(false)
 
     async function handleLogin(userLogin: UsuarioLogin) {
-
         setIsLoading(true)
 
         try {
             await login(`/usuarios/logar`, userLogin, setUsuario)
             alert("Usuário foi autenticado com sucesso!")
-
+            setIsLoading(false)
         } catch (error) {
             console.log(error)
-            alert("Credenciais para o usuário são invalidas")
-        } finally {
+            alert("Os dados do Usuário estão inconsistentes!")
             setIsLoading(false)
         }
     }
@@ -54,10 +52,10 @@ export function AuthProvider({ children }: AuthProvidersProps) {
             token: ''
         })
     }
-        return (
-            <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
-                {children}
-            </AuthContext.Provider>
 
-        )
-    }
+    return(
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading}}>
+            {children}
+        </AuthContext.Provider>
+    )
+}
