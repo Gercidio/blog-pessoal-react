@@ -9,12 +9,15 @@ import Cadastro from './pages/cadastro/Cadastro.tsx'
 import ListaTemas from './components/tema/listatemas/ListaTemas.tsx'
 import FormTema from './components/tema/formtema/FormTema.tsx'
 import DeletarTema from './components/tema/deletartema/DeletarTema.tsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer />
         <BrowserRouter>
           <Navbar />
           <div className="min-h-[80vh]">

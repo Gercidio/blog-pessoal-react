@@ -1,24 +1,26 @@
-import { useContext } from 'react'
+import { ReactNode, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContexts'
+import { ToastAlerta } from '../../utils/ToastAlerta';
 
 
 function Navbar() {
   const navigate = useNavigate();
 
-  const { handleLogout } = useContext(AuthContext)
+  const { usuario, handleLogout } = useContext(AuthContext)
+
+  let component: ReactNode
 
   function logout() {
     handleLogout()
-    alert('Usuário deslogado com sucesso')
+    ToastAlerta('Usuário deslogado com sucesso', 'sucesso')
     navigate('/login')
   }
 
-
-  return (
-    <>
+  if (usuario.token !== "") {
+    component = (
       <div className='w-full bg-indigo-900 text-white
-          flex justify-center py-4'>
+      flex justify-center py-4'>
 
         <div className="container flex justify-between text-lg">
           <Link to='/home' className="text-2xl font-bold">Blog Pessoal</Link>
@@ -32,6 +34,13 @@ function Navbar() {
           </div>
         </div>
       </div>
+    )
+
+  }
+
+  return (
+    <>
+      {component}
     </>
   )
 }
