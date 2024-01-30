@@ -11,6 +11,9 @@ import FormTema from './components/tema/formtema/FormTema.tsx'
 import DeletarTema from './components/tema/deletartema/DeletarTema.tsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import DeletarPostagem from './components/postagem/deletarpostagem/DeletarPostagem.tsx'
+import FormPostagem from './components/postagem/formpostagem/FormPostagem.tsx'
+import ListaPostagens from './components/postagem/listapostagens/ListaPostagens.tsx'
 
 
 function App() {
@@ -30,6 +33,10 @@ function App() {
               <Route path="/cadastrartema" element={<FormTema />} />
               <Route path="/editartema/:id" element={<FormTema />} />
               <Route path="/deletartema/:id" element={<DeletarTema />} />
+              <Route path="/postagens" element={<ListaPostagens />} />
+              <Route path="/cadastrarpostagem" element={<FormPostagem />} />
+              <Route path="/editarpostagem/:id" element={<FormPostagem />} />
+              <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
             </Routes>
           </div>
           <Footer />
